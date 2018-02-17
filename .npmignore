@@ -1,4 +1,3 @@
-lib
 tests
 karma.conf.js
 .npmignore
@@ -6,3 +5,8 @@ karma.conf.js
 rollpu.config.js
 tsconfig.json
 tslint.json
+.idea
+ngc-object-transformer.iml
+.git
+.editorconfig
+node_modules
