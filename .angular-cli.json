@@ -1,0 +1,36 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "ngx-object-transformer"
+  },
+  "apps": [
+    {
+      "root": ".",
+      "outDir": "dist",
+      "main": "lib/index.ts",
+      "test": "tests/test.ts",
+      "tsconfig": "lib/tsconfig.app.json",
+      "testTsconfig": "tests/tsconfig.spec.json"
+    }
+  ],
+  "lint": [
+    {
+      "project": "lib/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "tests/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "build": {
+      "showCircularDependencies": false
+    }
+  }
+}
