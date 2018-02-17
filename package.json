@@ -1,6 +1,6 @@
 {
   "name": "@digitalascetic/ngx-object-transformer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "main": "bundles/ngx-object-transformer.umd.min.js",
   "scripts": {

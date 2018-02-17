@@ -5,7 +5,6 @@ import {Injectable} from "@angular/core";
 // under systemjs, moment is actually exported as the default export, so we account for that
 const momentConstructor: (value?: any) => moment.Moment = (<any>moment).default || moment;
 
-@Injectable()
 export class DateTransformer implements ObjectTransformer {
 
     private _format: string;
