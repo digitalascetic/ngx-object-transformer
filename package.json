@@ -16,12 +16,12 @@
     "reflection"
   ],
   "dependencies": {
-    "@angular/core": "^5.1.2",
     "reflect-metadata": "0.1.10",
-    "zone.js": "^0.8.19",
     "moment": "^2.20.1"
   },
   "devDependencies": {
+    "@angular/core": "^5.1.2",
+    "zone.js": "^0.8.19",
     "@angular/cli": "^1.6.5",
     "@angular/compiler": "^5.1.2",
     "@angular/compiler-cli": "^5.1.2",
