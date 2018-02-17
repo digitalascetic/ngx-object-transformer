@@ -7,7 +7,7 @@
     {
       "root": ".",
       "outDir": "dist",
-      "main": "lib/index.ts",
+      "main": "index.ts",
       "test": "tests/test.ts",
       "tsconfig": "lib/tsconfig.app.json",
       "testTsconfig": "tests/tsconfig.spec.json"

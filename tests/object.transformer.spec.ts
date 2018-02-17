@@ -1,4 +1,4 @@
-import {DateTransformer, PropertyAccessorMapper, PropertyNameMapper} from "../lib";
+import {DateTransformer, PropertyAccessorMapper, PropertyNameMapper} from "../index";
 import {TestAcessorObject} from "./test.accessor.object";
 
 describe('Metadata tests', () => {
