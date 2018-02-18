@@ -1,6 +1,6 @@
 {
   "name": "@digitalascetic/ngx-object-transformer",
-  "version": "1.0.5",
+  "version": "1.0.13",
   "license": "MIT",
   "main": "./bundles/ngx-object-transformer.umd.js",
   "module": "./esm5/ngx-object-transformer.js",
@@ -17,8 +17,7 @@
     "build:min": "uglifyjs dist/bundles/ngx-object-transformer.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ngx-object-transformer.umd.min.js",
     "move:assets": "cp -r tmp/esm2015/*.d.ts tmp/esm2015/src tmp/esm2015/*.json package.json README.md dist/ && rm dist/src/*.js",
     "test": "karma start",
-    "clean": "rm -rf dist/ && rm -rf tmp/",
-    "publish": "npm publish dist --access public"
+    "clean": "rm -rf dist/ && rm -rf tmp/"
   },
   "keywords": [
     "angular5",
