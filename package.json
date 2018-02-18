@@ -1,11 +1,11 @@
 {
   "name": "@digitalascetic/ngx-object-transformer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
-  "main": "./bundles/nfx-object-transformer.umd.js",
-  "module": "./esm5/nfx-object-transformer.js",
-  "es2015": "./esm2015/nfx-object-transformer.js",
-  "typings": "./nfx-object-transformer.d.ts",
+  "main": "./bundles/ngx-object-transformer.umd.js",
+  "module": "./esm5/ngx-object-transformer.js",
+  "es2015": "./esm2015/ngx-object-transformer.js",
+  "typings": "./ngx-object-transformer.d.ts",
   "scripts": {
     "build": "npm run clean && npm run build:inline && npm run build:esm2015 && npm run build:fesm2015 && npm run build:esm5 && npm run build:fesm5 && npm run build:umd && npm run build:min && npm run move:assets",
     "build:inline": "mkdir -p tmp && rsync -a *.ts src ./tmp",
@@ -17,7 +17,8 @@
     "build:min": "uglifyjs dist/bundles/ngx-object-transformer.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ngx-object-transformer.umd.min.js",
     "move:assets": "cp -r tmp/esm2015/*.d.ts tmp/esm2015/src tmp/esm2015/*.json package.json README.md dist/ && rm dist/src/*.js",
     "test": "karma start",
-    "clean": "rm -rf dist/ && rm -rf tmp/"
+    "clean": "rm -rf dist/ && rm -rf tmp/",
+    "publish": "npm publish dist --access public"
   },
   "keywords": [
     "angular5",
