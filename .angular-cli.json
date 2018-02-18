@@ -6,16 +6,13 @@
   "apps": [
     {
       "root": ".",
-      "outDir": "dist",
-      "main": "index.ts",
       "test": "tests/test.ts",
-      "tsconfig": "lib/tsconfig.app.json",
       "testTsconfig": "tests/tsconfig.spec.json"
     }
   ],
   "lint": [
     {
-      "project": "lib/tsconfig.app.json",
+      "project": "tsconfig-esm5.json",
       "exclude": "**/node_modules/**"
     },
     {

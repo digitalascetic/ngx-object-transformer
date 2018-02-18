@@ -1,22 +1,30 @@
 {
   "name": "@digitalascetic/ngx-object-transformer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
-  "main": "bundles/ngx-object-transformer.umd.min.js",
+  "main": "./bundles/nfx-object-transformer.umd.js",
+  "module": "./esm5/nfx-object-transformer.js",
+  "es2015": "./esm2015/nfx-object-transformer.js",
+  "typings": "./nfx-object-transformer.d.ts",
   "scripts": {
+    "build": "npm run clean && npm run build:inline && npm run build:esm2015 && npm run build:fesm2015 && npm run build:esm5 && npm run build:fesm5 && npm run build:umd && npm run build:min && npm run move:assets",
+    "build:inline": "mkdir -p tmp && rsync -a *.ts src ./tmp",
+    "build:esm2015": "ngc -p tsconfig-esm2015.json",
+    "build:esm5": "ngc -p tsconfig-esm5.json",
+    "build:fesm2015": "rollup -c rollup-esm2015.conf.js",
+    "build:fesm5": "rollup -c rollup-esm5.conf.js",
+    "build:umd": "rollup -c rollup-umd.conf.js",
+    "build:min": "uglifyjs dist/bundles/ngx-object-transformer.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ngx-object-transformer.umd.min.js",
+    "move:assets": "cp -r tmp/esm2015/*.d.ts tmp/esm2015/src tmp/esm2015/*.json package.json README.md dist/ && rm dist/src/*.js",
     "test": "karma start",
-    "transpile": "ngc",
-    "package": "rollup -c",
-    "minify": "uglifyjs dist/bundles/ngx-object-transformer.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ngx-object-transformer.umd.min.js",
-    "build": "npm run transpile && npm run package && npm run minify"
+    "clean": "rm -rf dist/ && rm -rf tmp/"
   },
   "keywords": [
     "angular5",
-    "metadata",
-    "reflection"
+    "transform",
+    "serialization"
   ],
   "dependencies": {
-    "reflect-metadata": "0.1.10",
     "moment": "^2.20.1"
   },
   "devDependencies": {

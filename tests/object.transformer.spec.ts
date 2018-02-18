@@ -1,7 +1,6 @@
-import {DateTransformer, PropertyAccessorMapper, PropertyNameMapper} from "../index";
-import {TestAcessorObject} from "./test.accessor.object";
+import {DateTransformer} from "../src/index";
 
-describe('Metadata tests', () => {
+describe('ObjectTransformer tests', () => {
 
 
     it('convert Date object to string', () => {
@@ -37,14 +36,6 @@ describe('Metadata tests', () => {
 
     });
 
-    it('correctly convert accessor properties', () => {
-
-           let propMapper: PropertyNameMapper = new PropertyAccessorMapper();
-
-           expect(propMapper.getTransformedName('_test')).toBe('test');
-           expect(propMapper.getTransformedName('test')).toBe('test');
-           expect(propMapper.getOriginalName('test')).toBe('_test');
-
-    });
 
 });
+
