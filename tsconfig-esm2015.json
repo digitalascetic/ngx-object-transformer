@@ -22,7 +22,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodeGen": true,
-    "flatModuleId": "ngx-object-transformer",
+    "flatModuleId": "@digitalascetic/ngx-object-transformer",
     "flatModuleOutFile": "ngx-object-transformer.js"
   }
 }

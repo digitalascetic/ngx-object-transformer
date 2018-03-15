@@ -4,7 +4,7 @@ export default {
         file: 'dist/bundles/ngx-object-transformer.umd.js',
         format: 'umd'
     },
-    name: 'ngx-object-transformer',
+    name: 'ng.ngx-object-transformer',
     external: ['moment', '@angular/core'],
     globals: {
         '@angular/core': 'ng.core',
