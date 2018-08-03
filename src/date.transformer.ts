@@ -1,6 +1,5 @@
-import * as moment from 'moment';
+import * as moment from "moment";
 import {ObjectTransformer} from "./object.transformer";
-import {Injectable} from "@angular/core";
 
 // under systemjs, moment is actually exported as the default export, so we account for that
 const momentConstructor: (value?: any) => moment.Moment = (<any>moment).default || moment;
@@ -9,15 +8,24 @@ export class DateTransformer implements ObjectTransformer {
 
     private _format: string;
 
-    constructor(format: string) {
+    private _toUTC: boolean;
+
+    constructor(format: string, toUTC: boolean = false) {
         this._format = format;
+        this._toUTC = toUTC;
     }
 
     transformToObject(obj: Date): any {
         if (!obj) {
             return null;
         }
-        let dateField = momentConstructor(obj);
+
+        const dateField = momentConstructor(obj);
+
+        if (this._toUTC) {
+            dateField.utc();
+        }
+
         return dateField.format(this._format);
     }
 
@@ -25,6 +33,11 @@ export class DateTransformer implements ObjectTransformer {
         if (!objStr) {
             return null;
         }
-        return moment.parseZone(objStr, this._format).toDate();
+
+        if (this._toUTC) {
+            return moment.parseZone(objStr, this._format).toDate();
+        }
+
+        return moment(objStr, this._format).utc().toDate();
     }
 }
