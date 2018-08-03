@@ -54,11 +54,11 @@
     "tslint": "~5.9.1",
     "typescript": "~2.5.3",
     "rollup": "^0.52.3",
-    "uglify-js": "^3.2.2",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/digitalascetic/ngx-object-transformer.git"
-    },
-    "homepage": "https://github.com/digitalascetic/ngx-object-transformer.git"
-  }
+    "uglify-js": "^3.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalascetic/ngx-object-transformer.git"
+  },
+  "homepage": "https://github.com/digitalascetic/ngx-object-transformer.git"
 }

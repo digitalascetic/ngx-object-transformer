@@ -1,8 +1,11 @@
-import * as moment from "moment";
+import * as moment_ from 'moment';
 import {ObjectTransformer} from "./object.transformer";
 
+// Avoid Cannot call a namespace ('moment')
+const moment = moment_;
+
 // under systemjs, moment is actually exported as the default export, so we account for that
-const momentConstructor: (value?: any) => moment.Moment = (<any>moment).default || moment;
+const momentConstructor: (value?: any) => moment_.Moment = (<any>moment).default || moment;
 
 export class DateTransformer implements ObjectTransformer {
 
