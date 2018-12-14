@@ -1,4 +1,5 @@
-import {PropertyAccessorMapper, PropertyNameMapper} from "../src";
+import {PropertyAccessorMapper} from "./property.accessor.mapper";
+import {PropertyNameMapper} from "./property.name.mapper";
 
 describe('PropertyNameMapper tests', () => {
 

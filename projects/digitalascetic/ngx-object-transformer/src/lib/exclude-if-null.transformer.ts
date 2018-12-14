@@ -1,4 +1,4 @@
-import {ObjectTransformer} from "./object.transformer";
+import {ObjectTransformer} from './object.transformer';
 
 export class ExcludeIfNullTransformer implements ObjectTransformer {
 

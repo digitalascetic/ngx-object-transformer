@@ -1,4 +1,4 @@
-import {DateTransformer} from "../src";
+import {DateTransformer} from "./date.transformer";
 
 describe("ObjectTransformer tests", () => {
 

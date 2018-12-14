@@ -1,5 +1,5 @@
-import {PropertyNameMapper} from "./property.name.mapper";
-import {Injectable} from "@angular/core";
+import {PropertyNameMapper} from './property.name.mapper';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class PropertyAccessorMapper implements PropertyNameMapper {

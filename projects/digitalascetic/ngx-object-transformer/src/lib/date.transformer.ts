@@ -1,5 +1,5 @@
 import * as moment_ from 'moment';
-import {ObjectTransformer} from "./object.transformer";
+import {ObjectTransformer} from './object.transformer';
 
 // Avoid Cannot call a namespace ('moment')
 const moment = moment_;
