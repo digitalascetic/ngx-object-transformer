@@ -1,8 +1,9 @@
 {
   "name": "@digitalascetic/ngx-object-transformer",
-  "version": "0.0.1",
+  "version": "7.0.0",
   "peerDependencies": {
     "@angular/common": "^7.1.0",
-    "@angular/core": "^7.1.0"
+    "@angular/core": "^7.1.0",
+    "moment": "^2.23.0"
   }
 }
