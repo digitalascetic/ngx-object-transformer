@@ -1,4 +1,4 @@
-import * as moment_ from 'moment';
+import * as moment_ from 'moment-mini';
 import {ObjectTransformer} from './object.transformer';
 
 // Avoid Cannot call a namespace ('moment')
