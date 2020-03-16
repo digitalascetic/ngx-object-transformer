@@ -166,5 +166,5 @@
       }
     }
   },
-  "defaultProject": "ngx-object-transformer"
+  "defaultProject": "@digitalascetic/ngx-object-transformer"
 }
