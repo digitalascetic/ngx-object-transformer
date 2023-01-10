@@ -1,12 +1,12 @@
 {
   "name": "@digitalascetic/ngx-object-transformer",
-  "version": "10.0.0",
+  "version": "14.0.0",
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/common": ">=10.2.3",
-    "@angular/core": ">=10.2.3",
-    "moment-mini": "^2.22.1"
+    "@angular/common": ">=14.2.0",
+    "@angular/core": ">=14.2.0",
+    "moment-mini": "^2.29.4"
   }
 }
