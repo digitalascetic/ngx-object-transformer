@@ -1,46 +1,30 @@
-import * as moment_ from 'moment-mini';
 import {ObjectTransformer} from './object.transformer';
-
-// Avoid Cannot call a namespace ('moment')
-const moment = moment_;
-
-// under systemjs, moment is actually exported as the default export, so we account for that
-const momentConstructor: (value?: any) => moment_.Moment = (<any>moment).default || moment;
+import {format, parse} from 'date-fns';
 
 export class DateTransformer implements ObjectTransformer {
 
-    private _format: string;
+  private _format: string;
 
-    private _toUTC: boolean;
+  constructor(format: string) {
+    this._format = format;
+  }
 
-    constructor(format: string, toUTC: boolean = false) {
-        this._format = format;
-        this._toUTC = toUTC;
+  transformToObject(obj: Date): any {
+    if (!obj) {
+      return null;
     }
 
-    transformToObject(obj: Date): any {
-        if (!obj) {
-            return null;
-        }
+    /* According to https://github.com/date-fns/date-fns/blob/main/docs/unicodeTokens.md#popular-mistakes */
+    const formatPattern = this._format.replace(/Y/g, 'y').replace(/D/g, 'd');
 
-        const dateField = momentConstructor(obj);
+    return format(obj, formatPattern);
+  }
 
-        if (this._toUTC) {
-            dateField.utc();
-        }
-
-        return dateField.format(this._format);
+  transformFromObject(objStr: string, type: Function): any {
+    if (!objStr) {
+      return null;
     }
-
-    transformFromObject(objStr: string, type: Function): any {
-        if (!objStr) {
-            return null;
-        }
-
-        if (this._toUTC) {
-            return moment.parseZone(objStr, this._format).toDate();
-        }
-
-        return moment(objStr, this._format).utc().toDate();
-    }
+    const formatPattern = this._format.replace(/Y/g, 'y').replace(/D/g, 'd');
+    return parse(objStr, formatPattern, new Date());
+  }
 }

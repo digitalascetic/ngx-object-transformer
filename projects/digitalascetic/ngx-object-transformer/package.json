@@ -1,12 +1,12 @@
 {
   "name": "@digitalascetic/ngx-object-transformer",
-  "version": "14.0.0",
+  "version": "14.0.1",
   "dependencies": {
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
     "@angular/common": ">=14.2.0",
     "@angular/core": ">=14.2.0",
-    "moment-mini": "^2.29.4"
+    "date-fns": "^2.29.3"
   }
 }
