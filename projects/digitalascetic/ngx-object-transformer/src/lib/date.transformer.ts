@@ -1,5 +1,5 @@
 import {format, isDate, parse} from 'date-fns';
-import {ObjectTransformer} from '@digitalascetic/ngx-object-transformer';
+import {ObjectTransformer} from "./object.transformer";
 
 export class DateTransformer implements ObjectTransformer {
 
