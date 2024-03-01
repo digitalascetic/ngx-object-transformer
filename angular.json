@@ -7,7 +7,7 @@
       "root": "projects/digitalascetic/ngx-object-transformer",
       "sourceRoot": "projects/digitalascetic/ngx-object-transformer/src",
       "projectType": "library",
-      "prefix": "ngxobjtr",
+      "prefix": "ascform",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -17,16 +17,20 @@
           "configurations": {
             "production": {
               "tsConfig": "projects/digitalascetic/ngx-object-transformer/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/digitalascetic/ngx-object-transformer/tsconfig.lib.json"
             }
-          },
-          "defaultConfiguration": "production"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/digitalascetic/ngx-object-transformer/src/test.ts",
             "tsConfig": "projects/digitalascetic/ngx-object-transformer/tsconfig.spec.json",
-            "karmaConfig": "projects/digitalascetic/ngx-object-transformer/karma.conf.js"
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         },
         "lint": {
@@ -43,6 +47,5 @@
         }
       }
     }
-  },
-  "defaultProject": "@digitalascetic/ngx-object-transformer"
+  }
 }

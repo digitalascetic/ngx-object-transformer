@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "ngxobjtr",
+      "ascform",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "ngxobjtr",
+      "ascform",
       "kebab-case"
     ]
   }
