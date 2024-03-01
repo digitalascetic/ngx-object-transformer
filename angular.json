@@ -7,7 +7,7 @@
       "root": "projects/digitalascetic/ngx-object-transformer",
       "sourceRoot": "projects/digitalascetic/ngx-object-transformer/src",
       "projectType": "library",
-      "prefix": "ascform",
+      "prefix": "ascobj",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
