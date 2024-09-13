@@ -32,18 +32,6 @@
               "zone.js/testing"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/digitalascetic/ngx-object-transformer/tsconfig.lib.json",
-              "projects/digitalascetic/ngx-object-transformer/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     }

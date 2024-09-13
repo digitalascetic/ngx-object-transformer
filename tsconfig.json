@@ -2,7 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -15,21 +14,18 @@
     "sourceMap": true,
     "paths": {
       "@digitalascetic/ngx-object-transformer": [
-        "dist/digitalascetic/ngx-object-transformer"
-      ],
-      "@digitalascetic/ngx-object-transformer/*": [
-        "dist/digitalascetic/ngx-object-transformer/*"
+        "./dist/digitalascetic/ngx-object-transformer"
       ]
     },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
-    "target": "es2020",
-    "module": "es2020",
+    "target": "ES2022",
+    "module": "ES2022",
     "lib": [
-      "es2020",
+      "ES2022",
       "dom"
     ]
   },
@@ -38,7 +34,6 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictPropertyInitialization": false,
-    "strictTemplates": false,
-    "compilationMode": "partial"
+    "strictTemplates": false
   }
 }
