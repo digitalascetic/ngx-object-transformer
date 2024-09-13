@@ -20,20 +20,24 @@ export class DateTransformer implements ObjectTransformer {
     return format(dateToFormat, formatPattern);
   }
 
-  transformFromObject(objStr: string, type: Function): any {
-    if (!objStr) {
+  transformFromObject(obj: any, type: Function): any {
+    if (!obj) {
       return null;
     }
 
+    if (typeof obj !== 'string') {
+      throw obj + " is not a valid type. Must by a string";
+    }
+
     const formatPattern = this._format.replace(/Y/g, 'y').replace(/D/g, 'd');
-    const parsedDate = parse(objStr, formatPattern, new Date());
+    const parsedDate = parse(obj, formatPattern, new Date());
 
     /**
      * Handle Invalid Date
      * https://date-fns.org/v2.29.3/docs/parse
      */
     if (isNaN(parsedDate.getTime())) {
-      const timestamp = Date.parse(objStr);
+      const timestamp = Date.parse(obj);
       return new Date(timestamp);
     }
 
