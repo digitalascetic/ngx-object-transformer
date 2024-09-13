@@ -63,15 +63,17 @@ describe("ObjectTransformer tests", () => {
 
   it("Throw exception when date is not a valid type", () => {
 
-    const dateStr = ["2023-01-10 13:32:06"];
-
-    const dateTransformer = new DateTransformer("YYYY-MM-DD HH:mm:ss");
+    const dateStr = 1965;
+    const date = new Date(String(dateStr));
+    const dateTransformer = new DateTransformer("YYYY");
     try {
       const transformedDate = dateTransformer.transformFromObject(dateStr, Date);
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
+
+      expect(transformedDate.getFullYear()).toBe(date.getFullYear());
+      expect(transformedDate.getMonth()).toBe(date.getMonth());
+      expect(transformedDate.getDay()).toBe(date.getDay());
     } catch (e) {
-      expect(e).toBe("2023-01-10 13:32:06 is not a valid type. Must by a string");
+      expect(e).toBe("1965 is not a valid type. Must by a string");
     }
   });
 

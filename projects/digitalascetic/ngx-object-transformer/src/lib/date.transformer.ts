@@ -25,6 +25,10 @@ export class DateTransformer implements ObjectTransformer {
       return null;
     }
 
+    if (Number.isInteger(obj)) {
+      obj = String(obj);
+    }
+
     if (typeof obj !== 'string') {
       throw obj + " is not a valid type. Must by a string";
     }
